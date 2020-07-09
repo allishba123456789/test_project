@@ -1,0 +1,29 @@
+<h1 class="marginAll">All Plans</h1>
+
+<div class="media">
+	<div class="media-body">
+		<h4 class="media-heading"> <%= @plan.name %>
+		</h4>
+		<address>
+			<strong>
+				Monthly Fee:
+			</strong>
+			<%= @plan.monthly_fee %>
+		</address>
+		
+		<% if @plan.features.length == 0 %>
+		<h2> No Features Exists
+			<% else %>
+			<ul>
+				<% @plan.features.each do |feature|%>
+				<li> <%= feature.name %> with Code <%= feature.code %> and Unit Limit is <%= feature.unit_price %> </li>
+				<% end %>
+			</ul>
+			<% end %>
+			<% if policy(Feature).new? %>
+			<a class = "btn greenbutton text-white" href = <%= new_plan_feature_path(@plan) %> >
+				Add Feature
+			</a>
+			<% end %>
+		</div>
+	</div>

@@ -1,0 +1,24 @@
+<h2 class = "marginAll"> User Details</h2>
+
+	<div class="row">
+		<div class="col-sm-8">
+			<div class = "UserInfo">
+				<h5> <strong>Name:</strong> <%= @user.name%></h5>
+					<h5> <strong>Type:</strong> <%= @user.role%></h5>
+						<h5> <strong>Email:</strong> <%= @user.email%></h5>
+							<% if !@user.admin? %>
+							<h5> <strong>Billing Day:</strong> <%= @user.billing_day%></h5>
+							<h5> <strong>Plans Subscribed: </strong>
+								<%= @user.subscriptions.length %>
+							</h5>
+							<a href= <%= user_subscriptions_path(@user) %> class="btn greenbutton">
+								Show Subscriptions
+							</a>
+							<% end %>
+						</div>
+					</div>
+					<div class="col-sm-4">
+							<%= image_tag @user.image_url(:thumb).to_s, width: '200', height: '200', class: "media-object rounded-circle"%>
+					</div>
+				</div>
+			</div>

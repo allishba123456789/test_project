@@ -1,0 +1,13 @@
+<h1> <%=@user.name %>'s Subscription</h1>
+
+<ul>
+	<% @user.subscriptions.each do |subscription| %>
+	<li><%= link_to subscription.plan.name, "/subscriptions/#{subscription.id}" %></li>
+	<ul>
+		<% subscription.plan.features.each do | feature | %>
+		<li><%= feature.name %></li>
+		<% end %>
+	</ul>
+	<% end %>
+
+</ul>

@@ -1,0 +1,14 @@
+<h1>Show Subscriptions</h1>
+
+<table width=100%>
+	<tr>
+		<td>
+			<%= @plan.name%>
+		</td>
+		<td>
+			<% if policy(Usage).new? %>
+			<a href = <%= new_subscription_usage_path(@subscription.id) %> class = "btn greenbutton text-white float-right">Add Usage</a>
+			<% end %>
+		</td>
+	</tr>
+</table>

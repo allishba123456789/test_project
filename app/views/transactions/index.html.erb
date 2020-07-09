@@ -1,0 +1,22 @@
+<h1 class = "marginAll">Transactions</h1>
+<a href= "/transactions/new" class="btn greenbutton justify-content-right float-right">
+	<span class="glyphicon glyphicon-plus"></span>
+	Launch Call to Charge Users
+</a> 
+
+<table class="table">
+	<tr>
+		<th>Transction ID</th>
+		<th>Transaction Type</th>
+		<th>Amount</th>
+		<th>Date</th>
+	</tr>
+	<% @transactions.each do | transaction | %>
+	<tr>
+		<td><%= transaction.id %></td>
+		<td><%= transaction.chargeable_type %></td>
+		<td><%= transaction.amount %></td>
+		<td><%= transaction.date %></td>
+	</tr>	
+	<% end %>
+</table>
