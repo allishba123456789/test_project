@@ -4,22 +4,30 @@ class UsagesController < ApplicationController
   end
 
   def create
-    subscription = Subscription.find(params[:subscription_id])
-    usage = subscription.usages.new(params.require(:usage).permit(:no_of_units_used,:feature_id))
+    subscription = Subscription.find_by(id: params[:subscription_id])
+    usage = subscription.usages.new(usage_param)
     authorize usage
     if usage.save
-      redirect_to "/subscriptions/#{subscription.id}"
+      flash[:notice] = "Usage created successfully"
+      redirect_to subscription_path(subscription.id)
     else
-      render plain: "Try Again"
+      flash[:alert] = "No Usage created"
+      redirect_to new_subscription_usage_path(subscription.id)
     end
   end
 
   def new
   	@usage = Usage.new
     authorize @usage
-  	@subscription = Subscription.find(params[:subscription_id])
+  	@subscription = Subscription.find_by(id: params[:subscription_id])
     @plan = @subscription.plan
     @features = @plan.features
   end
 
+  private
+  
+  def usage_param
+    params.require(:usage).permit(:no_of_units_used,:feature_id)
+  end
+  
 end

@@ -1,0 +1,6 @@
+<li><%= link_to subscription.plan.name, subscription_path(subscription) %></li>
+<ul>
+  <% subscription.plan.features.each do | feature | %>
+  <li><%= feature.name %></li>
+  <% end %>
+</ul>

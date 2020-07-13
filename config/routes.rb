@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :transactions, only: [:new, :create, :index]
+  resources :transactions, only: [:new, :index]
   get '/users/forall', to: 'users#forall'
 
   devise_for :users, :controllers => { registrations: 'registrations' }

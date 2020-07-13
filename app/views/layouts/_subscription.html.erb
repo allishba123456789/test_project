@@ -1,0 +1,10 @@
+<tr>
+  <td>
+    <%= plan.name%>
+  </td>
+  <td>
+    <% if policy(Usage).new? %>
+    <%= render partial: "layouts/right_button", locals: {type: "Add Usage", location: new_subscription_usage_path(subscription.id)} %>
+    <% end %>
+  </td>
+</tr>

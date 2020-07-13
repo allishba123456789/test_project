@@ -1,9 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 
-	 private
-
+  private
   def sign_up_params
-  	puts "Registration Controller"
     params.require(:user).permit(:name, :email, :password, :password_confirmation,:billing_day, :image, :image_cache, :remove_image)
   end
 

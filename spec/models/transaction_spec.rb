@@ -13,9 +13,4 @@ RSpec.describe Transaction, type: :model do
 	describe '#date' do
 	  it { should validate_presence_of(:date) }
 	end
-
-	# describe '#chargeable_type'
-	#   it { should validate_presence_of(:chargeable_type) }
-	# => Inclusion
-	# end	
 end

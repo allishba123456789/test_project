@@ -1,41 +1,9 @@
 <% if policy(Plan).new? %>
-<a href = "/plans/new" class = "btn greenbutton text-white float-right">
-	<span class="glyphicon glyphicon-plus"></span>
-	Add Plan
-</a>
+<%= render partial: "layouts/right_button", locals: {type: "Add Plan", location: "/plans/new"} %>
 <% end %>
 
 <table class="table">
 	<% @plans.each do |plan| %>
-	<tr>
-		<td class="middle">
-			<div class="media">
-				<div class="media-body">
-					<a href = <%=plan_path(plan)%> >
-						<h4 class="media-heading"> <%= plan.name %>
-						</h4>
-						<address>
-							<strong>
-								Monthly Fee:
-							</strong>
-							<%= plan.monthly_fee %>
-						</address>
-					</a>
-				</div>
-			</div>
-		</td>
-		<td class="middle">
-
-
-			<% if !user_signed_in? %>
-			<%= link_to 'Subscribe', new_user_registration_path, class: "btn text-white float-right greenbutton", :onclick => 'alert("Before Subscribing an offer, Please Sign Up")' %>
-			<% elsif (!current_user.admin?) && ( plan.subscriptions.any? && plan.subscriptions.where(user_id: current_user.id).any? )
- 			%>
-			<a href = '#' class = "btn greenbutton text-white float-right">Subscribed</a>
-			<% else %>
-			<a href = <%=new_plan_subscription_path(plan) %> class = "btn greenbutton text-white float-right">Subscribe</a>
-			<% end %>
-		</td>
-	</tr>
+	   <%= render partial: "layouts/plan", locals: {plan: plan}%>
 	<% end %>
 </table>

@@ -1,8 +1,7 @@
-<h1 class = "marginAll">Transactions</h1>
-<a href= "/transactions/new" class="btn greenbutton justify-content-right float-right">
-	<span class="glyphicon glyphicon-plus"></span>
-	Launch Call to Charge Users
-</a> 
+<h1 class = "marginAll">All Transactions</h1>
+
+<%= render partial: "layouts/right_button", locals: {type: "Launch Call to Charge Users", location: "/transactions/new"} %>
+
 
 <table class="table">
 	<tr>
@@ -12,11 +11,6 @@
 		<th>Date</th>
 	</tr>
 	<% @transactions.each do | transaction | %>
-	<tr>
-		<td><%= transaction.id %></td>
-		<td><%= transaction.chargeable_type %></td>
-		<td><%= transaction.amount %></td>
-		<td><%= transaction.date %></td>
-	</tr>	
+	 <%= render partial: "layouts/transaction", locals: {transaction: transaction}%>
 	<% end %>
 </table>
