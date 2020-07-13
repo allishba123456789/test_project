@@ -1,55 +1,48 @@
 <h1>Create New Feature</h1>
-
 <%= form_with(url: plan_features_path(@plan) ,model: @feature, method: "post") do |f|%>
-
-<div class = "marginAll">
-	<div class="form-row">
-		<div class="col-md-3 my-auto">
-			<%= f.label "Name"%>
-		</div>
-		<div class="col-md-9">
-			<%= f.text_field :name, class: "form-control" %>
-		</div>
-	</div>
-</div>
-
-<div class = "marginAll">
-	<div class="form-row">
-		<div class="col-md-3 my-auto">
-			<%= f.label "Code" %>
-		</div>
-		<div class="col-md-9">
-			<%= f.text_field :code, class: "form-control" %>
-		</div>
-	</div>
-</div>
-
-<div class = "marginAll">
-	<div class="form-row">
-		<div class="col-md-3 my-auto">
-			<%= f.label "Unit Price" %>
-		</div>
-		<div class="col-md-9">
-			<%= f.number_field :unit_price, step: :any,class: "form-control" %>
-		</div>
-	</div>
-</div>
-
-<div class = "marginAll">
-  <div class="form-row">
-    <div class="col-md-3 my-auto">
-      <%= f.label "Maximum Units Allowed" %>
-    </div>
-    <div class="col-md-9">
-      <%= f.number_field :max_no_of_units, class: "form-control" %>
+  <div class = "marginAll">
+    <div class="form-row">
+      <div class="col-md-3 my-auto">
+        <%= f.label "Name"%>
+      </div>
+      <div class="col-md-9">
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
     </div>
   </div>
-</div>
-
-<div class = "marginAll">
-	<div class="actions">
-		<%= f.submit "Create feature", class: "btn btn-primary" %>
-	</div>
-</div>
-
+  <div class = "marginAll">
+    <div class="form-row">
+      <div class="col-md-3 my-auto">
+        <%= f.label "Code" %>
+      </div>
+      <div class="col-md-9">
+        <%= f.text_field :code, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class = "marginAll">
+    <div class="form-row">
+      <div class="col-md-3 my-auto">
+        <%= f.label "Unit Price" %>
+      </div>
+      <div class="col-md-9">
+        <%= f.number_field :unit_price, step: :any,class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class = "marginAll">
+    <div class="form-row">
+      <div class="col-md-3 my-auto">
+        <%= f.label "Maximum Units Allowed" %>
+      </div>
+      <div class="col-md-9">
+        <%= f.number_field :max_no_of_units, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class = "marginAll">
+    <div class="actions">
+      <%= f.submit "Create feature", class: "btn btn-primary" %>
+    </div>
+  </div>
 <% end %>

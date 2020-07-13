@@ -1,16 +1,13 @@
 <h1 class = "marginAll">All Transactions</h1>
-
 <%= render partial: "layouts/right_button", locals: {type: "Launch Call to Charge Users", location: "/transactions/new"} %>
-
-
 <table class="table">
-	<tr>
-		<th>Transction ID</th>
-		<th>Transaction Type</th>
-		<th>Amount</th>
-		<th>Date</th>
-	</tr>
-	<% @transactions.each do | transaction | %>
-	 <%= render partial: "layouts/transaction", locals: {transaction: transaction}%>
-	<% end %>
+  <tr>
+    <th>Transction ID</th>
+    <th>Transaction Type</th>
+    <th>Amount</th>
+    <th>Date</th>
+  </tr>
+  <% @transactions.each do | transaction | %>
+    <%= render partial: "layouts/transaction", locals: {transaction: transaction}%>
+  <% end %>
 </table>

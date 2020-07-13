@@ -9,7 +9,7 @@ class TransactionPolicy
   def index?
     @current_user.present? && @current_user.admin?
   end
-  
+
   def create?
     @current_user.present? && @current_user.admin?
   end
@@ -29,9 +29,7 @@ class TransactionPolicy
     def resolve
       if user.admin?
         scope.all
-     # else
-      #  scope.joins(subscription: :user).where('users.email'=> user.email)
       end
     end
   end
- end
+end

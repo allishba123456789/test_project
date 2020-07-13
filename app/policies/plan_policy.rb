@@ -26,4 +26,4 @@ class PlanPolicy
       scope.all
     end
   end
- end
+end

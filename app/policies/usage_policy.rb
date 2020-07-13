@@ -34,4 +34,4 @@ class UsagePolicy
       end
     end
   end
- end
+end

@@ -1,6 +1,5 @@
-
 <table class="table">
-	<% @users.each do |user| %>
-  <%= render partial: "layouts/user", locals: {user: user} %>
+  <% @users.each do |user| %>
+    <%= render partial: "layouts/user", locals: {user: user} %>
   <% end %>
 </table>

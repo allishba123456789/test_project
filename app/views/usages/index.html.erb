@@ -1,13 +1,12 @@
 <h1 class = "marginAll">Usages</h1>
-
 <table class="table">
-	<tr>
-		<th>User</th>
-		<th>Feature</th>
-		<th>No of Units Used</th>
-		<th>Date</th>
-	</tr>
-	<% @usages.each do | usage | %>
-	 <%= render partial: "layouts/usage", locals: { usage: usage }%>
-	<% end %>
+  <tr>
+    <th>User</th>
+    <th>Feature</th>
+    <th>No of Units Used</th>
+    <th>Date</th>
+  </tr>
+  <% @usages.each do | usage | %>
+    <%= render partial: "layouts/usage", locals: { usage: usage }%>
+  <% end %>
 </table>

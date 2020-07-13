@@ -1,26 +1,26 @@
 class UsersController < ApplicationController
-	protect_from_forgery
-	before_action :authenticate_user!, only: [:index, :show]
-	before_action :set_user, only: [:show, :edit]
-	
-	def index
-		@users = User.all
-		authorize User
-	end
+  protect_from_forgery
+  before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_user, only: [:show, :edit]
 
-	def show
-		authorize @user
-	end
+  def index
+    @users = User.all
+    authorize User
+  end
 
-	def forall
-	end
+  def show
+    authorize @user
+  end
 
-	def edit
-	end
+  def forall
+  end
 
-	private
-	def set_user
-		@user = User.find(params[:id])		
-	end
+  def edit
+  end
+
+  private
+  def set_user
+    @user = User.find(params[:id])
+  end
 
 end

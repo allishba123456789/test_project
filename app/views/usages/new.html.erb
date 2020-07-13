@@ -1,28 +1,22 @@
 <h1><%= current_user.name%>'s <%= @plan.name%></h1>
-
 <%= form_with(url: subscription_usages_path(@subscription), model: @usage, method: "post") do |f|%>
-
-<div class = "marginAll">
-	<div class="form-row">
-		<div class="col-md-9">
-		
-		<%= collection_select(:usage, :feature_id, @features, :id, :name, class: "form-control")%>
-		</div>
-	</div>
-</div>
-
-<div class = "marginAll">
-	<div class="form-row">
-		<div class="col-md-9">
-			<%= f.number_field :no_of_units_used, placeholder: "Enter No of Units", class: "form-control" %>
-		</div>
-	</div>
-</div>
-
-<div class = "marginAll">
-	<div class="actions">
-		<%= f.submit "Consume", class: "btn greenbutton" %>
-	</div>
-</div>
-
+  <div class = "marginAll">
+    <div class="form-row">
+      <div class="col-md-9">
+        <%= collection_select(:usage, :feature_id, @features, :id, :name, class: "form-control")%>
+      </div>
+    </div>
+  </div>
+  <div class = "marginAll">
+    <div class="form-row">
+      <div class="col-md-9">
+        <%= f.number_field :no_of_units_used, placeholder: "Enter No of Units", class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class = "marginAll">
+    <div class="actions">
+      <%= f.submit "Consume", class: "btn greenbutton" %>
+    </div>
+  </div>
 <% end %>

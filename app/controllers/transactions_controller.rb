@@ -5,7 +5,6 @@ class TransactionsController < ApplicationController
 
   def new
     callGenerator = BillingDayCallGenerator.new()
-    
     if callGenerator.transaction? == true
       flash[:notice] = "Transactions added"
     else

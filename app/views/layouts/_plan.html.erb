@@ -17,14 +17,13 @@
   </td>
   <td class="middle">
     <% if !user_signed_in? %>
-    <%= link_to 'Subscribe', new_user_registration_path, class: "btn text-white float-right greenbutton", :onclick => 'alert("Before Subscribing an offer, Please Sign Up")' %>
+      <%= link_to 'Subscribe', new_user_registration_path, class: "btn text-white float-right greenbutton", :onclick => 'alert("Before Subscribing an offer, Please Sign Up")' %>
     <% elsif (!current_user.admin?) && ( plan.subscriptions.any? && plan.subscriptions.where(user_id: current_user.id).any? )
     %>
     <a href = '#' class = "btn greenbutton text-white float-right">Subscribed</a>
-    <% elsif (!current_user.admin?)
+  <% elsif (!current_user.admin?)
     %>
-      <a href = <%=new_plan_subscription_path(plan)%> class = "btn greenbutton text-white float-right">Subscribe</a>
-
-    <% end %>
-  </td>
+  <a href = <%=new_plan_subscription_path(plan)%> class = "btn greenbutton text-white float-right">Subscribe</a>
+<% end %>
+</td>
 </tr>

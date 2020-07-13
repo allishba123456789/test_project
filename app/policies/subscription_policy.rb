@@ -22,4 +22,4 @@ class SubscriptionPolicy
       scope.all
     end
   end
- end
+end

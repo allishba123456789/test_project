@@ -46,4 +46,4 @@ class UserPolicy
       scope.all
     end
   end
- end
+end

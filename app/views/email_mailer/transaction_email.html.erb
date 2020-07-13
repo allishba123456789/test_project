@@ -1,53 +1,48 @@
-    <h1>Hi <%= @user.name %></h1>
-    <p>
-    	This email notifies that we have deducted <%= @extrapayable%> amount
-    	from your account against Plan <strong><%= @plan.name%></strong>
-    	and Feature <strong><%= @feature.name%></strong> because you overused the limit
-    </p>
-
-    <table>
-    	<tr>
-    		<td>
-    			Plan:
-    		</td>
-    		<td>
-    			<%= @plan.name%>
-    		</td>
-    	</tr>
-
-    	<tr>
-    		<td>
-    			Feature:
-    		</td>
-    		<td>
-    			<%= @feature.name%>
-    		</td>
-    	</tr>
-
-    	<tr>
-    		<td>
-    			Feature Limit:
-    		</td>
-    		<td>
-    			<%= @feature.max_no_of_units%>
-    		</td>
-    	</tr>
-
-    	<tr>
-    		<td>
-    			Unit Feature Price:
-    		</td>
-    		<td>
-    			<%= @feature.unit_price%>    
-    		</td>
-    	</tr>
-
-    	<tr>
-    		<td>
-    			Overused Units:
-    		</td>
-    		<td>
-    			<%=	@overUse %>
-    		</td>
-    	</tr>
-    </table>
+<h1>Hi <%= @user.name %></h1>
+<p>
+  This email notifies that we have deducted <%= @extrapayable%> amount
+  from your account against Plan <strong><%= @plan.name%></strong>
+  and Feature <strong><%= @feature.name%></strong> because you overused the limit
+</p>
+<table>
+  <tr>
+    <td>
+      Plan:
+    </td>
+    <td>
+      <%= @plan.name%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Feature:
+    </td>
+    <td>
+      <%= @feature.name%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Feature Limit:
+    </td>
+    <td>
+      <%= @feature.max_no_of_units%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Unit Feature Price:
+    </td>
+    <td>
+      <%= @feature.unit_price%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Overused Units:
+    </td>
+    <td>
+      <%= @overUse %>
+    </td>
+  </tr>
+</table>

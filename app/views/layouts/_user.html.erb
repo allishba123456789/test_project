@@ -1,39 +1,38 @@
 <tr>
-    <td class="middle">
-      <div class="media">
-        <div class="media-left">
-          <a href= <%=user_path(user)%> >
-            <%= image_tag user.image.url(:thumb).to_s, class: "media-object"%>
-          </a>
-        </div>
-        <div class="media-body">
-          <% if user.admin?%>
+  <td class="middle">
+    <div class="media">
+      <div class="media-left">
+        <a href= <%=user_path(user)%> >
+          <%= image_tag user.image.url(:thumb).to_s, class: "media-object"%>
+        </a>
+      </div>
+      <div class="media-body">
+        <% if user.admin?%>
           <h4 class="media-heading"> <%= link_to user.name + " ( Admin )", user_path(user) %>
           </h4>
-          <% else %>
+        <% else %>
           <h4 class="media-heading"> <%= link_to user.name , user_path(user) %>
           </h4>
-          <% end %>
-          <address>
-            <strong>Email: </strong>
-            <%= user.email %>
-          </address>
-          <address>
-            <strong>Billing Day: </strong>
-            <%= user.billing_day %>
-          </address>
-        </div>
+        <% end %>
+        <address>
+          <strong>Email: </strong>
+          <%= user.email %>
+        </address>
+        <address>
+          <strong>Billing Day: </strong>
+          <%= user.billing_day %>
+        </address>
       </div>
-    </td>
-    <td class="middle">
-      <div class = "row">
-          <a href= <%= edit_user_registration_path %> class="btn btn-circle btn-default btn-xs justify-content-left" title="Edit" >
-            <i class="glyphicon glyphicon-edit"></i>
-          </a>
-
-          <a href= <%=user_path(user)%> class="btn btn-circle btn-danger btn-xs text-white justify-content-right" data-method="delete" data-confirm="Are you sure?" title="Delete">
-            <i class="glyphicon glyphicon-remove"></i>
-          </a>
-      </div>
-    </td>
-  </tr>
+    </div>
+  </td>
+  <td class="middle">
+    <div class = "row">
+      <a href= <%= edit_user_registration_path %> class="btn btn-circle btn-default btn-xs justify-content-left" title="Edit" >
+        <i class="glyphicon glyphicon-edit"></i>
+      </a>
+      <a href= <%=user_path(user)%> class="btn btn-circle btn-danger btn-xs text-white justify-content-right" data-method="delete" data-confirm="Are you sure?" title="Delete">
+        <i class="glyphicon glyphicon-remove"></i>
+      </a>
+    </div>
+  </td>
+</tr>

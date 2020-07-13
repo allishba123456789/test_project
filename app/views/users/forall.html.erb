@@ -1,7 +1,6 @@
 <h1>Hello Everyone</h1>
-
 <% if user_signed_in? %>
-<h1> User is Logged In: <%= current_user.name %> </h1>
+  <h1> User is Logged In: <%= current_user.name %> </h1>
 <% else %>
-<h1> User is Not Logged In </h1>
+  <h1> User is Not Logged In </h1>
 <% end %>

@@ -5,13 +5,13 @@
       <h5> <strong>Type:</strong> <%= user.role%></h5>
       <h5> <strong>Email:</strong> <%= user.email%></h5>
       <% if !user.admin? %>
-      <h5> <strong>Billing Day:</strong> <%= user.billing_day%></h5>
-      <h5> <strong>Plans Subscribed: </strong>
-        <%= user.subscriptions.length %>
-      </h5>
-      <a href= <%= user_subscriptions_path(user) %> class="btn greenbutton">
-        Show Subscriptions
-      </a>
+        <h5> <strong>Billing Day:</strong> <%= user.billing_day%></h5>
+        <h5> <strong>Plans Subscribed: </strong>
+          <%= user.subscriptions.length %>
+        </h5>
+        <a href= <%= user_subscriptions_path(user) %> class="btn greenbutton">
+          Show Subscriptions
+        </a>
       <% end %>
     </div>
   </div>

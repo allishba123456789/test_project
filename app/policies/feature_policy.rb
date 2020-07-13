@@ -26,4 +26,4 @@ class FeaturePolicy
       scope.all
     end
   end
- end
+end

@@ -1,9 +1,8 @@
 <% if policy(Plan).new? %>
-<%= render partial: "layouts/right_button", locals: {type: "Add Plan", location: "/plans/new"} %>
+  <%= render partial: "layouts/right_button", locals: {type: "Add Plan", location: "/plans/new"} %>
 <% end %>
-
 <table class="table">
-	<% @plans.each do |plan| %>
-	   <%= render partial: "layouts/plan", locals: {plan: plan}%>
-	<% end %>
+  <% @plans.each do |plan| %>
+    <%= render partial: "layouts/plan", locals: {plan: plan}%>
+  <% end %>
 </table>

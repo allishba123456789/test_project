@@ -10,11 +10,11 @@ class User < ApplicationRecord
   after_initialize :set_default_user_type, :if => :new_record?
 
   def set_default_user_type
-  	self.role ||= :user
+    self.role ||= :user
   end
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+    :recoverable, :rememberable, :validatable
 
 
 end

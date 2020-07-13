@@ -7,51 +7,46 @@
           </a>
         </li>
         <% if policy(User).index?  %>
-        <li class="nav-item">
-          <a class="nav-link" href="/users">Users</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users">Users</a>
+          </li>
         <% end %>
-
         <li class="nav-item">
           <a class="nav-link" href="/plans">Plans</a>
         </li>
         <% if policy(Usage).index? %>
-        <li class="nav-item">
-          <a class="nav-link" href= "/usages" >Usages</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href= "/usages" >Usages</a>
+          </li>
         <% end %>
         <% if policy(Transaction).index? %>
-        <li class="nav-item">
-          <a class="nav-link" href="/transactions">Transactions</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/transactions">Transactions</a>
+          </li>
         <% end %>
       </ul>
       <div class="nav navbar-right navbar-btn">
         <% if !user_signed_in? %>
-        <a href= "/users/sign_in" class="btn greenbutton">
-          Login
-        </a>
-        <a href= <%= new_user_registration_path %> class="btn greenbutton">
-          Sign Up
-        </a>
-        <% else %>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown">
-            <%= image_tag current_user.image_url.to_s, width: '40', height: '40', class: "dropdownClass media-object rounded-circle", id: "navbarDropdownMenuLink" %>
-
+          <a href= "/users/sign_in" class="btn greenbutton">
+            Login
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to('Dashboard', user_path(current_user), class: "dropdown-item") %>
-            
-            <%= link_to('Edit Profile', edit_user_registration_path, class: "dropdown-item") %>
-            <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "dropdown-item") %>
-          </div>
-        </li> 
-        <% end %>  
-
+          <a href= <%= new_user_registration_path %> class="btn greenbutton">
+            Sign Up
+          </a>
+        <% else %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown">
+              <%= image_tag current_user.image_url.to_s, width: '40', height: '40', class: "dropdownClass media-object rounded-circle", id: "navbarDropdownMenuLink" %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to('Dashboard', user_path(current_user), class: "dropdown-item") %>
+              <%= link_to('Edit Profile', edit_user_registration_path, class: "dropdown-item") %>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "dropdown-item") %>
+            </div>
+          </li>
+        <% end %>
       </div>
     </ul>
   </div>
 </div>
 </nav>
-

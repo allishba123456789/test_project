@@ -1,13 +1,6 @@
 <h1> <%=@user.name %>'s Subscription</h1>
-
 <ul>
-	<% @user.subscriptions.each do |subscription| %>
-	<li><%= link_to subscription.plan.name, subscription_path(subscription) %></li>
-	<ul>
-		<% subscription.plan.features.each do | feature | %>
-		<li><%= feature.name %></li>
-		<% end %>
-	</ul>
-	<% end %>
-
+  <% @user.subscriptions.each do |subscription| %>
+    <%= render partial: "layouts/subscriptions_with_features", locals: {subscription: subscription}%>
+  <% end %>
 </ul>

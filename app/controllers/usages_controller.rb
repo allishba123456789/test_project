@@ -17,17 +17,17 @@ class UsagesController < ApplicationController
   end
 
   def new
-  	@usage = Usage.new
+    @usage = Usage.new
     authorize @usage
-  	@subscription = Subscription.find_by(id: params[:subscription_id])
+    @subscription = Subscription.find_by(id: params[:subscription_id])
     @plan = @subscription.plan
     @features = @plan.features
   end
 
   private
-  
+
   def usage_param
     params.require(:usage).permit(:no_of_units_used,:feature_id)
   end
-  
+
 end
