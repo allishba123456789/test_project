@@ -76,6 +76,6 @@ gem 'bootstrap-glyphicons'
 # for better View in Console
 gem 'hirb'
 # for uploading files
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 # for image size limit
 gem 'mini_magick'
